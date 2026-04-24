@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white dark:bg-chess-dark-bg text-gray-900 dark:text-white transition-colors duration-300;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-chess-dark-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-chess-green rounded-full hover:bg-chess-green-dark;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Button Styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200;
+}
+
+.btn-primary {
+  @apply btn bg-chess-green hover:bg-chess-green-dark text-white;
+}
+
+.btn-secondary {
+  @apply btn bg-gray-200 hover:bg-gray-300 dark:bg-chess-dark-surface dark:hover:bg-chess-dark-border text-gray-900 dark:text-white;
+}
+
+.btn-outline {
+  @apply btn border-2 border-chess-green text-chess-green hover:bg-chess-green hover:text-white;
+}
+
+/* Input Styles */
+input[type='text'],
+input[type='email'],
+input[type='password'],
+textarea,
+select {
+  @apply w-full px-3 py-2 rounded-lg border border-gray-300 dark:border-chess-dark-border bg-white dark:bg-chess-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-chess-green focus:border-transparent transition;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white dark:bg-chess-dark-surface rounded-lg shadow dark:shadow-lg border border-gray-200 dark:border-chess-dark-border transition;
+}
+
+.card:hover {
+  @apply shadow-lg dark:shadow-xl;
+}
